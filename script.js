@@ -1,4 +1,4 @@
-let apiKey = "453500f3c12aeb1d3a409a33395bf97f";
+let apiKey = "your_apikey_here";
 
 function setWeatherBackground(condition) {
     let bg = "";
