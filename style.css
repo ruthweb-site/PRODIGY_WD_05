@@ -1,0 +1,99 @@
+/* BODY SETUP */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: url("weather.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND OVERLAY — Blur & Darken */
+body::before {
+  content: "";
+  position: fixed; /* <- Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1; /* <- Push behind everything */
+}
+
+/* MAIN CONTENT Z-INDEX */
+.search-box,
+.weather-container,
+.extra-details {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* SEARCH BOX */
+.search-box {
+  padding: 150px 20px 40px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 13px;
+  width: 105px;
+  border: none;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
+
+/* WEATHER DISPLAY */
+.weather-container {
+  margin-top: 65px;
+}
+
+.city-name {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.temperature {
+  font-size: 70px;
+  margin: 10px 0;
+}
+
+.weather-condition {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* EXTRA DETAILS - VISIBILITY FIXED */
+.extra-details {
+  margin-top: 40px;
+  color: white;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+  font-size: 18px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 5px 0;
+}
+
+.detail-row span {
+  width: 80px;
+  text-align: center;
+}
